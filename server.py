@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from api import get_api
+from to_pdf import to_pdf
 # from sse_starlette.sse import EventSourceResponse
 from openai import OpenAI
 from pydantic import BaseModel
@@ -65,6 +66,8 @@ async def chat(request: ChatRequest):
     logger.info("Posting Chat.")
 
     bot_response = response.choices[0].message.content
-    chat_history.append({"role": "assistant", "content": bot_response})
+    if "END_DATA_COLLECTION" in bot_response:
+        to_pdf(bot_response)
 
+    chat_history.append({"role": "assistant", "content": bot_response})
     return {"response": bot_response, "chat_history": chat_history}
