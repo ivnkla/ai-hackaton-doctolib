@@ -1,6 +1,6 @@
-fastapi==0.115.8          # FastAPI framework
-uvicorn==0.33.0          # ASGI server for FastAPI
-openai==1.63.0           # OpenAI Python client
-pydantic==2.10.6         # Data validation (used by FastAPI)
-loguru==0.7.3            # Logger
-python-dotenv==1.0.1     # Read the .env
+fastapi==0.115.8          
+uvicorn==0.33.0          
+openai==1.63.0           
+pydantic==2.10.6         
+loguru==0.7.3           
+python-dotenv==1.0.1     

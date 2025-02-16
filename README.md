@@ -46,13 +46,17 @@ Consider the folowing interaction between the assistant and the patient:
 
 ## Structure
 ```markdown
+├── Dockerfile
+├── Makefile
 ├── README.md
-├── __pycache__
 ├── api.py
-├── chat.py
-├── main.py
 ├── prompt.txt
-└── timeout.py
+├── requirements.txt
+├── server.py
+└── static
+    ├── index.html
+    ├── script.js
+    └── style.css
 ```
 
 ## Motivation
