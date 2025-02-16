@@ -1,5 +1,11 @@
 # ai-hackaton-doctolib
 
+## Notes : this is the same repo except we added the pdf feature (lately)
+After the interaction you can get the patient report
+
+```
+docker cp my_fast_docker:/app/summary.pdf ./summary.pdf
+```
 ## Requirements
 
 - Python 3+
