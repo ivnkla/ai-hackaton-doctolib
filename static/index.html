@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot AI</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css"
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+
+        <div id="prompt">
+            <textarea id="message-input" placeholder="Type your message..." rows="1" onkeypress="handleKeyPress(event)"></textarea>
+            <button id="btn" onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
