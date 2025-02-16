@@ -37,18 +37,13 @@ python3 main.py
 
 ## Example
 
-Consider the following migration:
-
+Consider the folowing interaction :
 ```rb
-class AddPatientRefToAppointments < ActiveRecord::Migration[6.0]
-  def change
-    add_reference :appointments, :patient
-  end
-end
+insert
 ```
 
 ## Structure
-```rb
+```markdown
 ├── README.md
 ├── __pycache__
 │   ├── api.cpython-313.pyc
