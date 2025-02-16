@@ -42,7 +42,7 @@ http://127.0.0.1:8000
 ## Example
 
 See a demo :
-[![Demo](demo.gif)](https://github.com/ivnkla/ai-hackaton-doctolib/demo.mp4)
+![Demo](./demo.gif)
 
 ## Structure
 ```markdown
