@@ -20,22 +20,23 @@ pip install -r requirements.txt
 Also, considering sentitive API leak, you have to own your scaleway key and then run the following :
 
 ```rb
-echo API_KEY='"<your Scaleway key here>"' >> .env.example
+echo API_KEY=<your Scaleway key here> >> .env.example
 mv .env.example .env
 ```
 
 ## Usage
 
-Run this command:
+After launching Docker run this command:
 
 ```rb
-python main.py
+make 
+make re
 ```
 
-or 
+Then, open on your browser on : 
 
-```rb
-python3 main.py
+```
+http://127.0.0.1:8000
 ```
 
 ## Example
