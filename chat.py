@@ -1,19 +1,13 @@
+from timeout import *
 from openai import OpenAI
-from dotenv import load_dotenv
-import os
 
-#importation de l'API
-load_dotenv()
-api_key = os.getenv("API_KEY")
-
-
-def main():
+def get_report(API_KEY):
     with open("prompt.txt", "r", encoding="utf-8") as f:
         system_prompt = f.read()
 
     client = OpenAI(
         base_url="https://api.scaleway.ai/488b2cbb-38e3-4cdb-ac85-7aef7f019264/v1",
-        api_key="d67906c0-c6ba-4db9-bbf3-fbc34adf6d21"  # Remplace avec ta clé API IAM
+        api_key=API_KEY
     )
 
     chat_history = [{"role": "system", "content": system_prompt}]
@@ -29,7 +23,7 @@ def main():
         stream=True,
     )
     
-    print("Chatbot : ", end="")
+    print("Assistant Doctolib : ", end="")
     bot_response = ""
     for chunk in response:
         if chunk.choices and chunk.choices[0].delta.content:
@@ -40,9 +34,13 @@ def main():
     chat_history.append({"role": "assistant", "content": bot_response})
     
     while True:
-        user_input = input("Vous : ")
+        start_counter()
+        user_input = input("... ")
+        if user_input:
+            stop_counter() #le patient a émis une réponse
+
         if user_input.lower() == "exit":
-            print("Chatbot : Au revoir !")
+            print("Debug pour dev.")
             break
         
         chat_history.append({"role": "user", "content": user_input})
@@ -57,7 +55,8 @@ def main():
             stream=True,
         )
         
-        print("Chatbot : ", end="")
+        
+        print("Assistant Doctolib : ", end="")
         bot_response = ""
         for chunk in response:
             if chunk.choices and chunk.choices[0].delta.content:
@@ -67,5 +66,3 @@ def main():
         
         chat_history.append({"role": "assistant", "content": bot_response})
 
-if __name__ == "__main__":
-    main()
