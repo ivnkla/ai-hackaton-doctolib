@@ -1,4 +1,4 @@
-from chat import *
+from chatv2 import *
 from api import *
 
 #récupérer l'API de scaleway, ne pas oublier de configurer votre propre .env !

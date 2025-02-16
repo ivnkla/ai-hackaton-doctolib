@@ -1,13 +1,9 @@
 # ai-hackaton-doctolib
-# safe-pg-migrations
-
-ActiveRecord migrations for Postgres made safe.
-
-![safe-pg-migrations](./logo.png)
 
 ## Requirements
 
 - Python 3+
+- A Scaleway account
 
 After cloning the repo to your space :
 
@@ -19,6 +15,13 @@ Run the following to add the necessary librairies to your environment :
 
 ```rb
 pip install -r requirements.txt
+```
+
+Also, considering sentitive API leak, you have to own your scaleway key and then run the following :
+
+```rb
+echo API_KEY='"<your Scaleway key here>"' >> .env.example
+mv .env.example .env
 ```
 
 ## Usage
@@ -37,18 +40,14 @@ python3 main.py
 
 ## Example
 
-Consider the folowing interaction :
+Consider the folowing interaction between the assistant and the patient:
 ```rb
-insert
 ```
 
 ## Structure
 ```markdown
 ├── README.md
 ├── __pycache__
-│   ├── api.cpython-313.pyc
-│   ├── chat.cpython-313.pyc
-│   └── timeout.cpython-313.pyc
 ├── api.py
 ├── chat.py
 ├── main.py
@@ -72,5 +71,5 @@ Well, we have noiticed a ... to pitch
 ## Acknowledgments
 
 We are grateful to :
-- Antonin and ... from Scaleway ...
-- The Tech team which ...
+- Antonin and ... from Scaleway who helped us with their solution and various subjects
+- The Tech team which helped us on various subjects

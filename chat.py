@@ -2,7 +2,7 @@ from timeout import *
 from openai import OpenAI
 
 def get_report(API_KEY):
-    with open("prompt.txt", "r", encoding="utf-8") as f:
+    with open("prompt-en.txt", "r", encoding="utf-8") as f:
         system_prompt = f.read()
 
     client = OpenAI(
@@ -36,11 +36,10 @@ def get_report(API_KEY):
     while True:
         start_counter()
         user_input = input("... ")
-        if user_input:
-            stop_counter() #le patient a émis une réponse
+        stop_counter()  # Arrêter le compteur dès que l'utilisateur a saisi une réponse
 
         if user_input.lower() == "exit":
-            print("Debug pour dev.")
+            print("Fin de la session.")
             break
         
         chat_history.append({"role": "user", "content": user_input})
@@ -55,7 +54,6 @@ def get_report(API_KEY):
             stream=True,
         )
         
-        
         print("Assistant Doctolib : ", end="")
         bot_response = ""
         for chunk in response:
@@ -65,4 +63,3 @@ def get_report(API_KEY):
         print()
         
         chat_history.append({"role": "assistant", "content": bot_response})
-

@@ -5,7 +5,7 @@ def timeout_handler():
     exit(0)
 
 def start_counter():
-    signal.alarm(60)
+    signal.alarm(120)
 
 def stop_counter():
     signal.alarm(0)
