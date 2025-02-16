@@ -59,10 +59,6 @@ See a demo :
     └── style.css
 ```
 
-## Motivation
-
-Well, we have noiticed a ... to pitch 
-
 ## Authors
 
 - [@scartriche](https://github.com/scartriche)        - Clement Morice    - ECE Paris
