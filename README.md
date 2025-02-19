@@ -1,5 +1,8 @@
 # ai-hackaton-doctolib
 
+## Purpose 
+Developing a General Practitioner Assitant provinding a patient case/file before the consultation
+
 ## Requirements
 
 - Python 3+
